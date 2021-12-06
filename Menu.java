@@ -6,11 +6,14 @@ public class Menu {
         listaMotorista lm = new listaMotorista();
 
         Scanner scan = new Scanner(System.in);
-         String nome;
-         String cpf;
-         String categoria;
-         String validade;
-         String res;
+        String nome;
+        String cpf;
+        String categoria;
+        String validade;
+        String res;
+        String placaVeiculo;
+        String dataOcorrencia;
+        int km;
 
         
          do {
@@ -28,13 +31,26 @@ public class Menu {
                 System.out.println("CPF JA CADASTRADO, DIGITE UM CPF VALIDO !!");
             } else {
                 Motorista motoristaOne = new Motorista(nome, cpf, categoria, validade);
-                Infracao infracao = new Infracao(motoristaOne);
-                lm.setInfracao(infracao);
-                lm.motoristas.add(motoristaOne);
                 System.out.print("Defina o nivel da infracao (LEVE, MEDIA, GRAVE, GRAVISSIMA): ");
                 String nivelDaMulta = scan.nextLine();
-                lm.infracao.criarMulta(nivelDaMulta.toUpperCase());
+
+                System.out.print("Digite a placa do veículo: ");
+                placaVeiculo = scan.nextLine();
+                System.out.print("Digite a data da Ocorrencia: ");
+                dataOcorrencia = scan.nextLine();
+                System.out.print("Digite em qual quilômetro foi a ocorrencia: ");
+                km = scan.nextInt();
+                
+                
+                Registro registro = new Registro(motoristaOne, placaVeiculo, dataOcorrencia, km);
+                
+                lm.setRegistro(registro);
+                lm.motoristas.add(motoristaOne);
+                lm.registro.criarMulta(nivelDaMulta.toUpperCase());
                 lm.imprimir();
+                System.out.println("Placa: " + placaVeiculo);
+                System.out.println("data da Ocorrencia: " + dataOcorrencia);
+                System.out.println("Quilômetro: " + km);
             }
             
             System.out.println("Para cadastrar outro motorista digite sim ");

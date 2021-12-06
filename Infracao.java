@@ -52,7 +52,10 @@ public class Infracao {
         return valorDaMulta;
     }
 
-    public String statusInfracao() {
-        return " nivel: "+this.nivelDaMulta+"\n Valor: "+this.valorDaMulta+"\n pontos perdidos: "+this.pontuacao;
+    public void statusInfracao() {
+        System.out.println("Dados da infração;");
+        System.out.println(" nivel: "+this.nivelDaMulta);
+        System.out.println("Valor: "+this.valorDaMulta);
+        System.out.println("pontos perdidos: "+this.pontuacao);
     }
 }

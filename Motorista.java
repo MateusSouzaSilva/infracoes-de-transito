@@ -9,6 +9,7 @@ public class Motorista extends Habilitacao {
         this.nomeMotorista = nomeMotorista;
         this.cpfMotorista = cpfMotorista; 
     }
+    
     public boolean possuiHabilitacao() {
        String msg = tipoHabilitacao();
        if(msg == "Não possui Habilitação") {

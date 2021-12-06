@@ -18,7 +18,7 @@ public class listaMotorista{
             System.out.println("CPF: " + motoristas.get(contador).cpfMotorista);
             System.out.println("Categoria: " + motoristas.get(contador).categoriaHabilitacao);
             System.out.println("Validade: " + motoristas.get(contador).validadeHabilitacao);
-            System.out.println("Status Infração: \n" + registro.statusInfracao());
+            registro.statusInfracao();
             System.out.println();
 
 
